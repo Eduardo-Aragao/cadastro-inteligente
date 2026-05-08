@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Inteligente - TechConnect</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Criar Conta</h2>
+        <form id="cadastroForm" novalidate>
+            <div class="form-group">
+                <label for="nome">Nome Completo *</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required minlength="3" autocomplete="name">
+                <span class="error-msg" id="nome-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" required placeholder="exemplo@email.com">
+                <span class="error-msg" id="email-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha *</label>
+                <input type="password" id="senha" name="senha" required minlength="8">
+                <span class="error-msg" id="senha-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmaSenha">Confirmar Senha *</label>
+                <input type="password" id="confirmaSenha" name="confirmaSenha" required>
+                <span class="error-msg" id="confirmaSenha-error"></span>
+            </div>
+
+            <button type="submit" id="btnSubmit">Criar Conta</button>
+        </form>
+    </div>
+    <script src="src/scripts/script.js"></script>
+</body>
+</html>
