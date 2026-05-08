@@ -1,0 +1,37 @@
+:root {
+    --azul: #2E6DA4;
+    --verde: #1E7B4B;
+    --vermelho: #C0392B;
+    --radius: 8px;
+}
+
+body { font-family: sans-serif; display: flex; justify-content: center; padding: 2rem; background: #f4f7f6; }
+
+.form-container { 
+    background: white; padding: 2rem; border-radius: var(--radius); 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; max-width: 500px; 
+}
+
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+
+input {
+    padding: 0.75rem 1rem; border: 2px solid #dde1e7;
+    border-radius: var(--radius); font-size: 1rem; transition: all 0.3s ease; outline: none;
+}
+
+/* Estados de validação exigidos [cite: 74, 164] */
+input:focus { border-color: var(--azul); }
+input.error { border-color: var(--vermelho); background: #fff5f5; }
+input.success { border-color: var(--verde); background: #f0fff4; }
+
+.error-msg { color: var(--vermelho); font-size: 0.85rem; height: 1rem; }
+
+button {
+    width: 100%; padding: 0.9rem; background: var(--azul); color: white;
+    border: none; border-radius: var(--radius); cursor: pointer;
+    font-size: 1rem; font-weight: 600; transition: background 0.3s;
+}
+
+button:disabled { background: #ccc; cursor: not-allowed; }
+
+@media (max-width: 600px) { .form-container { padding: 1.25rem; margin: 1rem; } }
