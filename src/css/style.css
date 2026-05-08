@@ -24,6 +24,11 @@ input:focus { border-color: var(--azul); }
 input.error { border-color: var(--vermelho); background: #fff5f5; }
 input.success { border-color: var(--verde); background: #f0fff4; }
 
+.form-container h2 { margin-bottom: 0.25rem; }
+.subtitle { margin: 0 0 1.5rem; color: #556; font-size: 0.95rem; }
+.feedback-message { margin-top: 1rem; min-height: 1.25rem; font-weight: 600; color: var(--verde); text-align: center; }
+.feedback-message.error { color: var(--vermelho); }
+
 .error-msg { color: var(--vermelho); font-size: 0.85rem; height: 1rem; }
 
 button {

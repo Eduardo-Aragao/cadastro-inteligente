@@ -1,4 +1,5 @@
 const form = document.getElementById('cadastroForm');
+const feedbackMessage = document.getElementById('feedbackMessage');
 const campos = {
     nome: document.getElementById('nome'),
     email: document.getElementById('email'),
@@ -34,6 +35,16 @@ function aplicarValidacao(input, resultado) {
     }
 }
 
+function showFeedback(text, type = 'success') {
+    feedbackMessage.textContent = text;
+    feedbackMessage.className = `feedback-message ${type}`;
+}
+
+function clearFeedback() {
+    feedbackMessage.textContent = '';
+    feedbackMessage.className = 'feedback-message';
+}
+
 function validarFormulario() {
     let formularioValido = true;
 
@@ -45,6 +56,12 @@ function validarFormulario() {
             formularioValido = false;
         }
     });
+
+    if (!formularioValido) {
+        showFeedback('Revise os campos em vermelho e tente novamente.', 'error');
+    } else {
+        clearFeedback();
+    }
 
     return formularioValido;
 }
@@ -68,10 +85,11 @@ form.addEventListener('submit', (e) => {
     btn.textContent = 'Enviando...';
     
     setTimeout(() => {
-        alert('Cadastro realizado com sucesso!');
+        showFeedback('Cadastro realizado com sucesso!', 'success');
         form.reset();
         btn.disabled = false;
         btn.textContent = 'Criar Conta';
         document.querySelectorAll('input').forEach(i => i.classList.remove('success'));
+        setTimeout(clearFeedback, 5000);
     }, 2000);
 });
